@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pétalos & RaÃ­ces - FlorerÃ­a Artesanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">La <span></span> Pampa</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#cotizador">Cotizar</a></li>
+                <li><a href="#encargos">Encargos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <h2> Tea & Flowers</h2>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Flores que Cuentan Historias</h1>
+            <p>Arreglos florales artesanales hechos con amor para tus momentos especiales</p>
+            <a href="#catalogo" class="cta-button">Explorar Ramos</a>
+        </div>
+    </section>
+
+    <!-- Nuestros Clientes (Carrusel) -->
+    <section id="clientes" class="clientes-section">
+        <h2 class="section-title">Nuestros Clientes</h2>
+        <p style="text-align:center; color:var(--verde-medio); max-width:800px; margin:0 auto 1.5rem;">Comparte tus fotos con nosotros y las mostraremos aquí. Sube imágenes de tus ramos y clientes felices.</p>
+
+        <div class="clientes-container">
+            <div class="carousel">
+                <button class="carousel-btn prev" aria-label="Anterior">◀</button>
+                <div class="carousel-viewport">
+                    <ul class="carousel-track" id="carouselTrack">
+                        <li class="carousel-item"><img src="https://picsum.photos/seed/cliente1/800/500" alt="Cliente 1"></li>
+                        <li class="carousel-item"><img src="https://picsum.photos/seed/cliente2/800/500" alt="Cliente 2"></li>
+                        <li class="carousel-item"><img src="https://picsum.photos/seed/cliente3/800/500" alt="Cliente 3"></li>
+                        <li class="carousel-item"><img src="https://picsum.photos/seed/cliente4/800/500" alt="Cliente 4"></li>
+                    </ul>
+                </div>
+                <button class="carousel-btn next" aria-label="Siguiente">▶</button>
+            </div>
+
+            <div class="clientes-controls">
+                <label class="file-label">Añadir fotos de clientes
+                    <input type="file" id="clientFiles" accept="image/*" multiple>
+                </label>
+                <small style="display:block; color:var(--verde-medio); margin-top:0.5rem;">Selecciona varias fotos y se añadirán al carrusel.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia -->
+    <section id="historia-preview" class="historia-preview">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p style="text-align:center; color:var(--verde-medio); max-width:800px; margin:0 auto 1.5rem;">Desde un pequeño taller hasta llegar a los corazones de nuestra comunidad. Conoce cómo nació Pétalos & Raíces.</p>
+        <div style="text-align:center;">
+            <a href="historia.html" class="cta-button">Leer la Historia Completa</a>
+        </div>
+    </section>
+
+    <!-- Catálogo de Ramos -->
+    <section id="catalogo">
+        <h2 class="section-title">Nuestros Ramos</h2>
+            <div class="ramos-grid">
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="rreglofloral1.jpg" alt="Ramo Clásico"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Clásico</h3>
+                    <p>Elegante combinación de rosas rojas y blancas con eucalipto. Perfecto para expresar amor y admiración.</p>
+                    <div class="ramo-price">$25.000</div>
+                </div>
+            </div>
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="images/ramo-primaveral.jpg" alt="Ramo Primaveral"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Primaveral</h3>
+                    <p>Mezcla vibrante de tulipanes, margaritas y flores silvestres. Llena de color y frescura natural.</p>
+                    <div class="ramo-price">$30.000</div>
+                </div>
+            </div>
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="images/ramo-romantico.jpg" alt="Ramo Romántico"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Romántico</h3>
+                    <p>Delicadas peonÃ­as rosadas con rosas de jardÃ­n. Ideal para bodas y aniversarios especiales.</p>
+                    <div class="ramo-price">$45.000</div>
+                </div>
+            </div>
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="images/ramo-tropical.jpg" alt="Ramo Tropical"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Tropical</h3>
+                    <p>Exóticas orquÃ­deas y anturios en tonos vibrantes. Perfecto para ocasiones únicas y especiales.</p>
+                    <div class="ramo-price">$55.000</div>
+                </div>
+            </div>
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="images/ramo-girasoles.jpg" alt="Ramo Girasoles"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Girasoles</h3>
+                    <p>Radiantes girasoles acompañados de flores campestres. Transmite alegrÃ­a y energÃ­a positiva.</p>
+                    <div class="ramo-price">$28.000</div>
+                </div>
+            </div>
+            <div class="ramo-card">
+                <div class="ramo-image"><img src="images/ramo-minimalista.jpg" alt="Ramo Minimalista"></div>
+                <div class="ramo-info">
+                    <h3>Ramo Minimalista</h3>
+                    <p>Elegante selección de lirios blancos y verdes. Sofisticación y pureza en cada detalle.</p>
+                    <div class="ramo-price">$35.000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotizador para Eventos -->
+    <section id="cotizador">
+        <h2 class="section-title">Cotiza tu Evento</h2>
+        <div class="cotizador-container">
+            <form id="cotizadorForm">
+                <div class="form-group">
+                    <label for="tipoEvento">Tipo de Evento</label>
+                    <select id="tipoEvento" required>
+                        <option value="">Selecciona un tipo</option>
+                        <option value="boda">Boda</option>
+                        <option value="cumpleanos">Cumpleaños</option>
+                        <option value="aniversario">Aniversario</option>
+                        <option value="corporativo">Evento Corporativo</option>
+                        <option value="funeral">Funeral</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="numeroInvitados">Número de Invitados</label>
+                    <input type="number" id="numeroInvitados" placeholder="Ej: 50" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaEvento">Fecha del Evento</label>
+                    <input type="date" id="fechaEvento" required>
+                </div>
+                <div class="form-group">
+                    <label for="presupuesto">Presupuesto Aproximado (CLP)</label>
+                    <select id="presupuesto" required>
+                        <option value="">Selecciona un rango</option>
+                        <option value="50000">Hasta $50.000</option>
+                        <option value="100000">$50.000 - $100.000</option>
+                        <option value="200000">$100.000 - $200.000</option>
+                        <option value="300000">$200.000 - $300.000</option>
+                        <option value="500000">Más de $300.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="detallesEvento">Detalles Adicionales</label>
+                    <textarea id="detallesEvento" placeholder="Cuéntanos sobre tu visión, colores preferidos, estilo..."></textarea>
+                </div>
+                <button type="submit" class="submit-button">Calcular Cotización</button>
+            </form>
+            
+            <div class="resultado-cotizacion" id="resultadoCotizacion">
+                <h3>Estimación de tu Evento</h3>
+                <p id="textoResultado"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encargos Personalizados -->
+    <section id="encargos">
+        <h2 class="section-title">Encargos Personalizados</h2>
+        <p style="text-align: center; color: var(--verde-medio); max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem;">
+            Creamos el ramo perfecto para tu ocasión especial. Trabajamos contigo para diseñar arreglos únicos que reflejen tu estilo y emociones.
+        </p>
+        <div class="encargo-steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Cuéntanos tu Idea</h3>
+                <p>Comparte tu visión, ocasión, colores preferidos y cualquier detalle que tengas en mente.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Diseñamos Juntos</h3>
+                <p>Creamos un boceto personalizado y te proponemos opciones de flores según la temporada.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Reserva tu Fecha</h3>
+                <p>Confirmamos la fecha de entrega con anticipación para garantizar disponibilidad.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Creamos tu Ramo</h3>
+                <p>Nuestros floristas artesanales elaboran tu arreglo con las flores más frescas y cuidado.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="color: var(--verde-medio); margin-bottom: 1rem; font-size: 1.1rem;">
+                ⏰ Recomendamos hacer tu encargo con al menos <strong>7 dÃ­as de anticipación</strong>
+            </p>
+            <a href="#contacto" class="cta-button">Hacer un Encargo</a>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--verde-oscuro); margin-bottom: 2rem;">
+                    Estamos aquÃ­ para ayudarte
+                </h3>
+                <div class="contacto-item">
+                    <div class="contacto-icon">📱</div>
+                    <div>
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/56912345678" target="_blank">+56 9 1234 5678</a>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <div class="contacto-icon">✉️</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:contacto@petalosyraices.cl">contacto@petalosyraices.cl</a>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <div class="contacto-icon">📍</div>
+                    <div>
+                        <strong>Dirección</strong><br>
+                        Los Andes, ValparaÃ­so, Chile
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <div class="contacto-icon">🕐</div>
+                    <div>
+                        <strong>Horario</strong><br>
+                        Lunes a Sábado: 9:00 - 19:00<br>
+                        Domingo: 10:00 - 14:00
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacto-form">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--verde-oscuro); margin-bottom: 2rem;">
+                    Envíanos un Mensaje
+                </h3>
+                <form id="contactoForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="+56 9 1234 5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pétalos & RaÃ­ces FlorerÃ­a. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem;">Hecho con 💚 en Los Andes, ValparaÃ­so</p>
+    </footer>
+
+    <script>
+        // Cotizador de eventos
+        document.getElementById('cotizadorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const tipoEvento = document.getElementById('tipoEvento').value;
+            const numeroInvitados = parseInt(document.getElementById('numeroInvitados').value);
+            const fechaEvento = document.getElementById('fechaEvento').value;
+            const presupuesto = parseInt(document.getElementById('presupuesto').value);
+            
+            // Cálculo base por tipo de evento
+            let precioBase = 0;
+            switch(tipoEvento) {
+                case 'boda':
+                    precioBase = numeroInvitados * 3500;
+                    break;
+                case 'cumpleanos':
+                    precioBase = numeroInvitados * 1500;
+                    break;
+                case 'aniversario':
+                    precioBase = numeroInvitados * 2000;
+                    break;
+                case 'corporativo':
+                    precioBase = numeroInvitados * 2500;
+                    break;
+                case 'funeral':
+                    precioBase = numeroInvitados * 2800;
+                    break;
+                default:
+                    precioBase = numeroInvitados * 2000;
+            }
+            
+            // Verificar anticipación
+            const fechaActual = new Date();
+            const fechaSeleccionada = new Date(fechaEvento);
+            const diasAnticipacion = Math.floor((fechaSeleccionada - fechaActual) / (1000 * 60 * 60 * 24));
+            
+            let mensaje = `<strong>Estimación para tu ${tipoEvento}:</strong><br><br>`;
+            mensaje += `📅 Fecha: ${fechaEvento}<br>`;
+            mensaje += `👥 Invitados: ${numeroInvitados}<br>`;
+            mensaje += `💰 Estimación: $${precioBase.toLocaleString('es-CL')}<br><br>`;
+            
+            if (diasAnticipacion < 7) {
+                mensaje += `⚠️ <strong>Aviso:</strong> Tu evento es en ${diasAnticipacion} dÃ­as. Recomendamos contactarnos inmediatamente para verificar disponibilidad.<br><br>`;
+            } else {
+                mensaje += `✅ Excelente anticipación (${diasAnticipacion} dÃ­as). Tenemos disponibilidad para crear algo especial.<br><br>`;
+            }
+            
+            mensaje += `<strong>Próximo paso:</strong> Contáctanos por WhatsApp o email para confirmar detalles y personalizar tu cotización.`;
+            
+            document.getElementById('textoResultado').innerHTML = mensaje;
+            document.getElementById('resultadoCotizacion').classList.add('show');
+            
+            // Scroll suave al resultado
+            document.getElementById('resultadoCotizacion').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Formulario de contacto
+        document.getElementById('contactoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            // Crear mensaje para WhatsApp
+            const mensajeWhatsApp = `Hola! Soy ${nombre}. ${mensaje}`;
+            const urlWhatsApp = `https://wa.me/56912345678?text=${encodeURIComponent(mensajeWhatsApp)}`;
+            
+            // Abrir WhatsApp
+            window.open(urlWhatsApp, '_blank');
+            
+            // Limpiar formulario
+            this.reset();
+            alert('¡Gracias por contactarnos! Te redirigiremos a WhatsApp para continuar la conversación.');
+        });
+
+        // Header sticky con efecto
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(45, 90, 61, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Carrusel de Clientes: manejo de subida y navegación
+        (function() {
+            const track = document.getElementById('carouselTrack');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const fileInput = document.getElementById('clientFiles');
+
+            function updateButtons() {
+                const first = track.firstElementChild;
+                const last = track.lastElementChild;
+                prevBtn.disabled = !first;
+                nextBtn.disabled = !last;
+            }
+
+            function scrollToIndex(index) {
+                const items = Array.from(track.children);
+                if (items[index]) {
+                    items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                }
+            }
+
+            let currentIndex = 0;
+
+            nextBtn.addEventListener('click', () => {
+                const items = Array.from(track.children);
+                if (items.length === 0) return;
+                currentIndex = Math.min(currentIndex + 1, items.length - 1);
+                scrollToIndex(currentIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                const items = Array.from(track.children);
+                if (items.length === 0) return;
+                currentIndex = Math.max(currentIndex - 1, 0);
+                scrollToIndex(currentIndex);
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                const files = Array.from(e.target.files);
+                files.forEach(file => {
+                    if (!file.type.startsWith('image/')) return;
+                    const reader = new FileReader();
+                    reader.onload = function(evt) {
+                        const li = document.createElement('li');
+                        li.className = 'carousel-item';
+                        const img = document.createElement('img');
+                        img.src = evt.target.result;
+                        img.alt = file.name;
+                        li.appendChild(img);
+                        track.appendChild(li);
+                        currentIndex = track.children.length - 1;
+                        scrollToIndex(currentIndex);
+                    };
+                    reader.readAsDataURL(file);
+                });
+                // limpiar selección para permitir volver a subir mismos archivos si se desea
+                e.target.value = '';
+                updateButtons();
+            });
+
+            // Permitir navegar con flechas del teclado cuando el carrusel tiene foco
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextBtn.click();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+            });
+
+            // Inicializar botones
+            updateButtons();
+        })();
+    </script>
+</body>
+</html>
