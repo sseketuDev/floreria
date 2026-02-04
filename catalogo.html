@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pampa Floristería - Catálogo 2026</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Catálogo 2026 de La Pampa Floristería. Flores frescas de temporada, arreglos florales únicos y servicio personalizado.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #2d5016;
+            --color-secondary: #e8b4b8;
+            --color-accent: #f4a5ae;
+            --color-dark: #1a1a1a;
+            --color-light: #faf8f5;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f2ed 100%);
+            color: var(--color-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Partículas flotantes de fondo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(232, 180, 184, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(45, 80, 22, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Elementos decorativos flotantes */
+        .flor-decorativa {
+            position: fixed;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+            filter: blur(1px);
+        }
+
+        .flor-1 {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 8s;
+        }
+
+        .flor-2 {
+            top: 40%;
+            right: 8%;
+            animation-delay: 2s;
+            animation-duration: 10s;
+        }
+
+        .flor-3 {
+            bottom: 15%;
+            left: 10%;
+            animation-delay: 4s;
+            animation-duration: 12s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(3deg);
+            }
+        }
+
+        /* Header con animación de entrada */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #3d6b22 100%);
+            color: white;
+            padding: var(--spacing-md) var(--spacing-sm);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            animation: slideDown 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            animation: fadeInScale 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .logo-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: var(--spacing-sm);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .logo-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--color-accent);
+            box-shadow: 0 15px 50px rgba(232, 180, 184, 0.5);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
+            50% { text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.4); }
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            opacity: 0.95;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.3) 0%, rgba(244, 165, 174, 0.2) 100%);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #4a7e2a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 0.8s ease-out 0.7s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--color-dark);
+            opacity: 0.8;
+            animation: slideInRight 0.8s ease-out 0.9s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Catálogo */
+        .catalogo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Productos con animaciones mejoradas */
+        .producto {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        .producto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .producto:hover::before {
+            opacity: 1;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .producto:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .producto:nth-child(even) .producto-imagen {
+            order: 2;
+        }
+
+        .producto:nth-child(even) .producto-contenido {
+            order: 1;
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            min-height: 400px;
+        }
+
+        .producto:hover .producto-imagen {
+            transform: scale(1.1);
+        }
+
+        .producto-contenido {
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .producto-nombre {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .producto-nombre span:first-child {
+            animation: shimmer 3s ease-in-out infinite;
+            background: linear-gradient(90deg, var(--color-primary) 0%, #4a7e2a 50%, var(--color-primary) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .producto-precio {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 2px 10px rgba(232, 180, 184, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 5px 20px rgba(232, 180, 184, 0.5);
+            }
+        }
+
+        .producto-descripcion {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .producto-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .producto-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .producto-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .producto-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .producto-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .whatsapp-icon {
+            font-size: 1.3rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: floatButton 3s ease-in-out infinite;
+        }
+
+        @keyframes floatButton {
+            0%, 100% {
+                transform: translateY(0);
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-text {
+            display: none;
+        }
+
+        /* Modal mejorado */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 25px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            animation: scaleIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            font-size: 2rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-confirmar {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+
+        .btn-confirmar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-cancelar {
+            background: linear-gradient(135deg, #e8b4b8 0%, #f4a5ae 100%);
+            color: white;
+        }
+
+        .btn-cancelar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 180, 184, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #3d6b22 100%);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-contacto {
+            margin: var(--spacing-md) 0;
+        }
+
+        .footer-contacto a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-contacto a:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .producto {
+                grid-template-columns: 1fr !important;
+            }
+
+            .producto:nth-child(even) .producto-imagen,
+            .producto-imagen {
+                order: 1 !important;
+            }
+
+            .producto:nth-child(even) .producto-contenido,
+            .producto-contenido {
+                order: 2 !important;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .logo-text {
+                font-size: 2.2rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: var(--spacing-md);
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+
+            .modal-buttons button {
+                min-width: 100%;
+            }
+        }
+
+        /* Notificaciones */
+        .notificacion {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            z-index: 3000;
+            animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 350px;
+        }
+
+        .notificacion.exito {
+            border-left: 4px solid #25D366;
+        }
+
+        .notificacion.info {
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .notificacion.error {
+            border-left: 4px solid #ff4444;
+        }
+
+        @media (max-width: 768px) {
+            .notificacion {
+                right: 15px;
+                left: 15px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos decorativos -->
+    <div class="flor-decorativa flor-1">🌸</div>
+    <div class="flor-decorativa flor-2">✿</div>
+    <div class="flor-decorativa flor-3">❀</div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logopampa.jpg" 
+                 alt="Logo de La Pampa Floristería" 
+                 class="logo-image"
+                 id="logoImage"
+                 loading="eager"
+                 width="120"
+                 height="120">
+            <div class="logo-icon" id="logoIcon" style="display: none;">🌿</div>
+            <h1 class="logo-text">La Pampa</h1>
+            <p class="logo-subtitle">Floristería</p>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2 class="hero-title">Valores 2026</h2>
+        <p class="hero-subtitle">Flores Frescas de Temporada</p>
+    </section>
+
+    <!-- Catálogo -->
+    <main class="catalogo">
+        <article class="producto" data-nombre="Single Flowers" data-precio="6000">
+            <img src="singleflower.jpeg" 
+                 alt="Arreglo floral Single Flowers" 
+                 class="producto-imagen"
+                 loading="lazy"
+                 width="800"
+                 height="600">
+            <div class="producto-contenido">
+                <h3 class="producto-nombre">
+                    <span>Single Flowers</span>
+                    <span class="producto-precio">$6.000</span>
+                </h3>
+                <p class="producto-descripcion">Una sola flor puede decir más que mil palabras. Seleccionamos la flor más hermosa de temporada y la acompañamos con follaje fresco. Perfecta para gestos sinceros y espontáneos. Incluye presentación en papel kraft artesanal y tarjeta personalizada.</p>
+                <button class="producto-btn" onclick="abrirWhatsApp('Single Flowers', 6000)">
+                    <span class="whatsapp-icon">💬</span>
+                    Consultar por WhatsApp
+                </button>
+            </div>
+        </article>
+
+        <article class="producto" data-nombre="Ramo Mini" data-precio="22000">
+            <img src="pequeñoo.jpg" 
+                 alt="Ramo Mini con flores de temporada" 
+                 class="producto-imagen"
+                 loading="lazy"
+                 width="800"
+                 height="600">
+            <div class="producto-contenido">
+                <h3 class="producto-nombre">
+                    <span>Ramo Mini</span>
+                    <span class="producto-precio">$22.000</span>
+                </h3>
+                <p class="producto-descripcion">Cinco varas de flores frescas de temporada en colores armoniosos, desde blancos puros hasta rosas suaves o vibrantes tonos cálidos. Complementado con follaje verde que aporta frescura. Ideal para sorpresas espontáneas, agradecer o alegrar el día. Incluye envoltura artesanal y tarjeta.</p>
+                <button class="producto-btn" onclick="abrirWhatsApp('Ramo Mini', 22000)">
+                    <span class="whatsapp-icon">💬</span>
+                    Consultar por WhatsApp
+                </button>
+            </div>
+        </article>
+
+        <article class="producto" data-nombre="Ramo Pequeño" data-precio="34000">
+            <img src="mediano.jpeg" 
+                 alt="Ramo Pequeño de ocho varas de flores" 
+                 class="producto-imagen"
+                 loading="lazy"
+                 width="800"
+                 height="600">
+            <div class="producto-contenido">
+                <h3 class="producto-nombre">
+                    <span>Ramo Pequeño</span>
+                    <span class="producto-precio">$34.000</span>
+                </h3>
+                <p class="producto-descripcion">Ocho varas de flores cuidadosamente seleccionadas: rosas románticas, lirios elegantes, claveles clásicos o una mezcla colorida de flores silvestres. Acompañadas de follaje texturizado que añade profundidad natural. Perfecto para cumpleaños, celebrar logros o hacer sentir especial a alguien querido.</p>
+                <button class="producto-btn" onclick="abrirWhatsApp('Ramo Pequeño', 34000)">
+                    <span class="whatsapp-icon">💬</span>
+                    Consultar por WhatsApp
+                </button>
+            </div>
+        </article>
+
+        <article class="producto" data-nombre="Ramo Mediano" data-precio="56000">
+            <img src="grande.jpeg" 
+                 alt="Ramo Mediano con catorce varas de flores" 
+                 class="producto-imagen"
+                 loading="lazy"
+                 width="800"
+                 height="600">
+            <div class="producto-contenido">
+                <h3 class="producto-nombre">
+                    <span>Ramo Mediano</span>
+                    <span class="producto-precio">$56.000</span>
+                </h3>
+                <p class="producto-descripcion">Catorce varas de flores de temporada en composiciones que equilibran color, textura y fragancia. Combinamos variedades clásicas con flores modernas, creando paletas sofisticadas. El abundante follaje verde da estructura y movimiento al arreglo. Ideal para aniversarios importantes.</p>
+                <button class="producto-btn" onclick="abrirWhatsApp('Ramo Mediano', 56000)">
+                    <span class="whatsapp-icon">💬</span>
+                    Consultar por WhatsApp
+                </button>
+            </div>
+        </article>
+
+        <article class="producto" data-nombre="Ramo Grande" data-precio="78000">
+            <img src="arreglofloral4.jpg" 
+                 alt="Ramo Grande con veinte varas de flores" 
+                 class="producto-imagen"
+                 loading="lazy"
+                 width="800"
+                 height="600">
+            <div class="producto-contenido">
+                <h3 class="producto-nombre">
+                    <span>Ramo Grande</span>
+                    <span class="producto-precio">$78.000</span>
+                </h3>
+                <p class="producto-descripcion">Nuestra pieza maestra con 20 varas de las flores más espectaculares de temporada. Una sinfonía de colores, texturas y fragancias diseñada como obra de arte viva. Incluye flores protagonistas, complementarias y generoso follaje variado. Perfecto para propuestas de matrimonio, grandes celebraciones y eventos memorables.</p>
+                <button class="producto-btn" onclick="abrirWhatsApp('Ramo Grande', 78000)">
+                    <span class="whatsapp-icon">💬</span>
+                    Consultar por WhatsApp
+                </button>
+            </div>
+        </article>
+    </main>
+
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" onclick="mostrarModalGeneral(); return false;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Confirmar Consulta</h2>
+            <p id="modal-text"></p>
+            <div class="modal-buttons">
+                <button class="btn-confirmar" id="btn-confirmar">
+                    <i class="fab fa-whatsapp"></i> Confirmar
+                </button>
+                <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>La Pampa Floristería</h3>
+            <div class="footer-contacto">
+                <p><i class="fas fa-phone"></i> <a href="tel:+56322382080" id="telefono-footer">+56 32 238 2080</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Los Andes, Valparaíso, Chile</p>
+            </div>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">© 2026 La Pampa Floristería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Configuración
+        const CONFIG = {
+            nombreEmpresa: 'La Pampa Floristería',
+            telefono: '+56322382080',
+            telefonoFormateado: '+56 32 238 2080',
+            ubicacion: 'Los Andes, Valparaíso'
+        };
+
+        let productoActual = null;
+        let precioActual = 0;
+
+        // Abrir WhatsApp con producto específico
+        function abrirWhatsApp(nombre, precio) {
+            productoActual = nombre;
+            precioActual = precio;
+            
+            const precioFormateado = precio.toLocaleString('es-CL');
+            document.getElementById('modal-title').textContent = 'Confirmar Consulta';
+            document.getElementById('modal-text').innerHTML = `
+                ¿Deseas consultar por <strong>${nombre}</strong> ($${precioFormateado})?
+            `;
+            
+            document.getElementById('modal').classList.add('active');
+            
+            document.getElementById('btn-confirmar').onclick = function() {
+                enviarWhatsApp(nombre, precio);
+            };
+        }
+
+        // Mostrar modal general
+        function mostrarModalGeneral() {
+            document.getElementById('modal-title').textContent = 'Contactar por WhatsApp';
+            document.getElementById('modal-text').innerHTML = 
+                '¿Deseas abrir WhatsApp para hacer una consulta general?';
+            
+            document.getElementById('modal').classList.add('active');
+            
+            document.getElementById('btn-confirmar').onclick = function() {
+                enviarWhatsAppGeneral();
+            };
+        }
+
+        // Enviar mensaje de WhatsApp
+        function enviarWhatsApp(nombre, precio) {
+            const mensaje = `Hola! Me interesa consultar por el *${nombre}* ($${precio.toLocaleString('es-CL')})`;
+            const url = `https://wa.me/${CONFIG.telefono.replace(/\+/g, '')}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+            cerrarModal();
+            mostrarNotificacion('Abriendo WhatsApp...', 'exito');
+        }
+
+        // Enviar mensaje general
+        function enviarWhatsAppGeneral() {
+            const mensaje = `Hola! Me gustaría hacer una consulta sobre los productos de ${CONFIG.nombreEmpresa}`;
+            const url = `https://wa.me/${CONFIG.telefono.replace(/\+/g, '')}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+            cerrarModal();
+            mostrarNotificacion('Abriendo WhatsApp...', 'exito');
+        }
+
+        // Cerrar modal
+        function cerrarModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                cerrarModal();
+            }
+        });
+
+        // Mostrar notificación
+        function mostrarNotificacion(mensaje, tipo = 'info') {
+            const notif = document.createElement('div');
+            notif.className = `notificacion ${tipo}`;
+            notif.innerHTML = `
+                <strong>${tipo === 'exito' ? '✓' : 'ℹ'}</strong> ${mensaje}
+            `;
+            document.body.appendChild(notif);
+            
+            setTimeout(() => {
+                notif.style.animation = 'slideInRight 0.5s reverse';
+                setTimeout(() => notif.remove(), 500);
+            }, 3000);
+        }
+
+        // Animación de scroll para productos
+        function configurarAnimaciones() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 150);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.producto').forEach(producto => {
+                observer.observe(producto);
+            });
+        }
+
+        // Efecto parallax en flores decorativas
+        function configurarParallax() {
+            let ticking = false;
+            
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const scrolled = window.pageYOffset;
+                        const flores = document.querySelectorAll('.flor-decorativa');
+                        
+                        flores.forEach((flor, index) => {
+                            const speed = 0.3 + (index * 0.15);
+                            const yOffset = scrolled * speed;
+                            const rotation = scrolled * 0.05;
+                            flor.style.transform = `translateY(${yOffset}px) rotate(${rotation}deg)`;
+                        });
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        // Manejo de error del logo
+        document.getElementById('logoImage').addEventListener('error', function() {
+            this.style.display = 'none';
+            document.getElementById('logoIcon').style.display = 'block';
+        });
+
+        // Inicialización
+        function inicializar() {
+            console.log(`🌺 ${CONFIG.nombreEmpresa} - Catálogo 2026`);
+            configurarAnimaciones();
+            configurarParallax();
+            
+            // Mostrar mensaje de bienvenida después de un momento
+            setTimeout(() => {
+                mostrarNotificacion('¡Bienvenido a La Pampa Floristería! 🌸', 'info');
+            }, 1000);
+        }
+
+        // Iniciar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', inicializar);
+        } else {
+            inicializar();
+        }
+    </script>
+</body>
+</html>
