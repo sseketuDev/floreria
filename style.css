@@ -308,10 +308,11 @@
         /* Cards de Flores */
         .ramos-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
+            align-items: start;
         }
 
         .ramo-card {
@@ -331,9 +332,11 @@
         }
 
         .ramo-image {
-            height: 350px;
             overflow: hidden;
             position: relative;
+            aspect-ratio: 16/9;
+            min-height: 220px;
+            width: 100%;
         }
 
         .ramo-image img {
@@ -341,10 +344,32 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            display: block;
         }
 
         .ramo-card:hover .ramo-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+
+        /* Ajustes responsivos para que las imágenes se vean más anchas */
+        @media (max-width: 1024px) {
+            .ramos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ramo-image {
+                aspect-ratio: 16/9;
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ramos-grid {
+                grid-template-columns: 1fr;
+            }
+            .ramo-image {
+                aspect-ratio: 4/3;
+                min-height: 300px;
+            }
         }
 
         .ramo-info {

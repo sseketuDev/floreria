@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pampa Cafetería - Catálogo 2026</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Catálogo 2026 de La Pampa Cafetería. Cafés premium y postres artesanales.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2d5016;
+            --secondary: #e8b4b8;
+            --accent: #f4a5ae;
+            --dark: #1a1a1a;
+            --light: #faf8f5;
+            --sm: 1rem;
+            --md: 2rem;
+            --lg: 4rem;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #faf8f5, #f5f2ed);
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #3d6b22 100%);
+            color: white;
+            padding: var(--md);
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container { text-align: center; }
+
+        .logo-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: var(--sm);
+            transition: transform 0.3s;
+        }
+
+        .logo-image:hover { transform: scale(1.1); }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.95;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(232,180,184,0.3), rgba(244,165,174,0.2));
+            padding: var(--lg) var(--md);
+            text-align: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: var(--sm);
+            background: linear-gradient(135deg, var(--primary), #4a7e2a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle { font-size: 1.4rem; color: var(--dark); opacity: 0.8; }
+
+        .espacio {
+            background: white;
+            padding: var(--lg) var(--md);
+            margin: var(--lg) 0;
+            border-radius: 15px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 5;
+        }
+
+        .espacio-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: var(--md);
+        }
+
+        .espacio-contenido {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--md);
+            align-items: center;
+            margin-bottom: var(--md);
+        }
+
+        .espacio-texto {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .espacio-texto p {
+            margin-bottom: var(--sm);
+        }
+
+        .espacio-galeria {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sm);
+        }
+
+        .espacio-galeria img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .espacio-galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .catalogo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--lg) var(--sm);
+            position: relative;
+            z-index: 5;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: var(--lg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.4s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .producto:nth-child(even) .producto-imagen { order: 2; }
+        .producto:nth-child(even) .producto-contenido { order: 1; }
+
+        .producto-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+            min-height: 400px;
+        }
+
+        .producto:hover .producto-imagen { transform: scale(1.1); }
+
+        .producto-contenido {
+            padding: var(--md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .producto-nombre {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: var(--sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--sm);
+        }
+
+        .producto-descripcion {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: var(--md);
+        }
+
+        .whatsapp-float {
+            display: none;
+        }
+
+        .modal {
+            display: none;
+        }
+
+        .modal-content {
+            display: none;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary), #3d6b22);
+            color: white;
+            text-align: center;
+            padding: var(--lg) var(--sm);
+            margin-top: var(--lg);
+            z-index: 10;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .footer a:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .producto { grid-template-columns: 1fr !important; }
+            .producto-imagen { order: 1 !important; }
+            .producto-contenido { order: 2 !important; }
+            .hero-title { font-size: 2.5rem; }
+            .logo-text { font-size: 2.2rem; }
+            .espacio-contenido { grid-template-columns: 1fr !important; }
+            .espacio-titulo { font-size: 1.8rem; }
+            .espacio-galeria { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logopampa.jpg" alt="Logo" class="logo-image">
+            <h1 class="logo-text">La Pampa</h1>
+    
+        </div>
+    </header>
+    
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2 class="hero-title">Cafés y Postres</h2>
+        <p class="hero-subtitle">Deliciosos complementos para tus momentos especiales</p>
+    </section>
+
+    <!-- Nuestro Espacio -->
+    <section class="espacio">
+        <h2 class="espacio-titulo">Nuestro Espacio de Confort</h2>
+        
+        <div class="espacio-contenido">
+            <div class="espacio-texto">
+                <p><strong>Bienvenido a La Pampa Cafetería</strong>, un espacio donde conversar, relajarse y disfrutar de una experiencia única.</p>
+
+                <p>Nuestro ambiente ha sido cuidadosamente diseñado para que puedas pasar momentos especiales con familia y amigos. Aquí podrás <strong>disfrutar de cafés premium, postres deliciosos y la belleza de nuestras flores</strong> que adornan cada rincón del lugar.</p>
+
+                <p>Cada taza de café es preparada con esmero, y nuestras flores frescas crean una atmósfera acogedora y romántica. Es el lugar perfecto para celebrar, compartir conversaciones significativas o simplemente darte un momento de paz.</p>
+
+                <p style="color: var(--primary); font-weight: bold;">✨ Flores naturales • Café de calidad • Postres artesanales • Ambiente acogedor</p>
+            </div>
+
+            <div class="espacio-galeria">
+                <img src="postre1.jpg" alt="Torta de Chocolate">
+                <img src="postre2.jpg" alt="Fraisier de Fresas">
+                <img src="espacio1.jpg" alt="Interior cafetería con flores">
+                <img src="espacio2.jpg" alt="Ambiente y decoración">
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>La Pampa Cafetería</h3>
+        <p><a href="tel:+56978858053">📞 +56 9 7885 8053</a></p>
+        <p>📍 San Felipe, V Región, Chile</p>
+        <p style="margin-top: 1.5rem; opacity: 0.8;">© 2026 La Pampa Cafetería</p>
+    </footer>
+
+    <script>
+        // Animación de scroll
+        document.querySelectorAll('.producto').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+                el.style.transition = 'all 0.4s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, i * 100);
+        });
+    </script>
+</body>
+</html>
+ 
