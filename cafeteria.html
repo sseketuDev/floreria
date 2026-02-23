@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Pampa Cafetería - Catálogo 2026</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/jpeg" href="logopampa.jpg">
     <meta name="description" content="Catálogo 2026 de La Pampa Cafetería. Cafés premium y postres artesanales.">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,6 +43,22 @@
         }
 
         .logo-container { text-align: center; }
+
+        .volver-btn {
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            background: rgba(255,255,255,0.95);
+            color: var(--primary);
+            padding: 0.45rem 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            z-index: 30;
+        }
+        .volver-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.14); }
 
         .logo-image {
             width: 120px;
@@ -240,6 +256,31 @@
 
         .footer a:hover { transform: scale(1.1); }
 
+        /* Botón flotante para ir al inicio */
+        .btn-top {
+            position: fixed;
+            right: 20px;
+            bottom: 28px;
+            background: linear-gradient(135deg, var(--primary), #4a7e2a);
+            color: white;
+            border: none;
+            padding: 0.6rem 0.9rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.25s ease;
+            z-index: 50;
+        }
+        .btn-top.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .btn-top:focus { outline: 3px solid rgba(255,255,255,0.18); }
+
         @media (max-width: 768px) {
             .producto { grid-template-columns: 1fr !important; }
             .producto-imagen { order: 1 !important; }
@@ -249,6 +290,7 @@
             .espacio-contenido { grid-template-columns: 1fr !important; }
             .espacio-titulo { font-size: 1.8rem; }
             .espacio-galeria { grid-template-columns: 1fr !important; }
+            .btn-top { right: 14px; bottom: 18px; padding: 0.5rem 0.7rem; }
         }
     </style>
 </head>
@@ -260,6 +302,7 @@
             <h1 class="logo-text">La Pampa</h1>
     
         </div>
+        <a href="index.html" class="volver-btn" aria-label="Volver al inicio">← Inicio</a>
     </header>
     
 
@@ -285,10 +328,10 @@
             </div>
 
             <div class="espacio-galeria">
-                <img src="postre1.jpg" alt="Torta de Chocolate">
-                <img src="postre2.jpg" alt="Fraisier de Fresas">
-                <img src="espacio1.jpg" alt="Interior cafetería con flores">
-                <img src="espacio2.jpg" alt="Ambiente y decoración">
+                <img src="cafe1.jpg" alt="Torta de Chocolate">
+                <img src="cafe2.jpg" alt="Fraisier de Fresas">
+                <img src="cafe3.jpg" alt="Interior cafetería con flores">
+                <img src="escaparate.jpeg" alt="Ambiente y decoración">
             </div>
         </div>
     </section>
@@ -304,8 +347,10 @@
         <p style="margin-top: 1.5rem; opacity: 0.8;">© 2026 La Pampa Cafetería</p>
     </footer>
 
+    <button id="btnTop" class="btn-top" aria-label="Ir al inicio">↑ Inicio</button>
+
     <script>
-        // Animación de scroll
+        // Animación de scroll para productos
         document.querySelectorAll('.producto').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -315,6 +360,27 @@
                 el.style.transform = 'translateY(0)';
             }, i * 100);
         });
+
+        // Lógica del botón "Ir al inicio"
+        (function() {
+            const btnTop = document.getElementById('btnTop');
+            if (!btnTop) return;
+
+            // Mostrar/ocultar según scroll
+            function toggleBtn() {
+                if (window.scrollY > 200) btnTop.classList.add('visible');
+                else btnTop.classList.remove('visible');
+            }
+
+            window.addEventListener('scroll', toggleBtn, { passive: true });
+            // inicializar estado
+            toggleBtn();
+
+            // click: desplazamiento suave al inicio
+            btnTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
     </script>
 </body>
 </html>
